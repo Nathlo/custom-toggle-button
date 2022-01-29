@@ -26,10 +26,31 @@ body {
 }
 
 .checkbox input {
+  position: relative;
   height: 40px;
   width: 90px;
+  outline: none;
   background: #e6e6e6;
   -webkit-appearance: none;
   border-radius: 50px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+input:checked {
+  background: #664aff;
+}
+
+.checkbox input:before {
+  height: 100%;
+  width: 40px;
+  left: 0;
+  content: "";
+  background: linear-gradient(#fff, #f2f2f2, #e6e6e6, #d9d9d9);
+  position: absolute;
+  border-radius: 50px;
+  transform: scale(0.85);
+  transition: left 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+input:checked:before {
+  left: 50px;
 }
